@@ -1,0 +1,22 @@
+[33mcommit 78bc4978a0f30249de6552d5d45fb4ac769f3fb4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: allifbrun@gmail.com <allifbrun@gmail.com>
+Date:   Tue Oct 7 16:30:44 2025 -0300
+
+    inital commit
+
+ refund/.gitignore           |   24 [32m+[m
+ refund/README.md            |   73 [32m+[m
+ refund/index.html           |   13 [32m+[m
+ refund/package-lock.json    | 3426 [32m+++++++++++++++++++++++++++++++++++++++++++[m
+ refund/package.json         |   24 [32m+[m
+ refund/public/vite.svg      |    1 [32m+[m
+ refund/src/App.css          |   42 [32m+[m
+ refund/src/App.tsx          |   35 [32m+[m
+ refund/src/assets/react.svg |    1 [32m+[m
+ refund/src/index.css        |   68 [32m+[m
+ refund/src/main.tsx         |   10 [32m+[m
+ refund/tsconfig.app.json    |   28 [32m+[m
+ refund/tsconfig.json        |    7 [32m+[m
+ refund/tsconfig.node.json   |   26 [32m+[m
+ refund/vite.config.ts       |    7 [32m+[m
+ 15 files changed, 3785 insertions(+)
