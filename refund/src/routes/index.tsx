@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { AuthRoute } from "./AuthRoute"
+import { AuthRoutes } from "./AuthRoutes"
 import { Auth } from "../pages/Auth"
 import { Employee } from "../pages/Employee"
-import { EmployeeRoute } from "./EmployeeRoute"
+import { EmployeeRoutes } from "./EmployeeRoutes"
 
 
 const session = {
     user: {
-        role: "employee"
+        role: ""
     }
 }
 
@@ -18,11 +18,11 @@ export function IndexRoutes() {
         switch (session?.user.role) {
             case "employee":
 
-               return <EmployeeRoute />
+               return <EmployeeRoutes />
 
             default:
 
-              return  <AuthRoute />
+              return  <AuthRoutes />
 
         }
     }
