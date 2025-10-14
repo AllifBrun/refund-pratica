@@ -11,7 +11,10 @@ export function Input({ type="text", legend, ...rest }: Props) {
 
             {legend && <legend className="text-inherit uppercase text-xs mb-2">{legend}</legend>}
 
-            <input {...rest} className="w-full h-12 border border-gray-300 focus:border-green-100  focus:border-2 outline-none rounded-lg text-gray-100 p-4" />
+            <input 
+            {...rest} 
+            type={type}
+            className="w-full h-12 border border-gray-300 focus:border-green-100  focus:border-2 outline-none rounded-lg text-gray-100 p-4 placeholder-gray-300" />
 
 
         </fieldset>

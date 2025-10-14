@@ -23,7 +23,7 @@ export function Button({
 
     children,
     variant = "base",
-    isLoading = true,
+    isLoading = false,
     type = "button",
     className,
     ...rest
