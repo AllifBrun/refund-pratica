@@ -7,7 +7,7 @@ export function Auth(){
         <div>
 
         <h1>Autorização</h1>
-        <Button>Teste</Button>
+        <Button>teste</Button>
         </div>
     )
 }
