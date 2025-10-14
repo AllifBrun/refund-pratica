@@ -1,13 +1,11 @@
 import { Button } from "../Components/Button";
 
-
-export function Auth(){
+export function Auth() {
 
     return (
         <div>
 
-        <h1>Autorização</h1>
-        <Button>teste</Button>
+            <Button>teste</Button>
         </div>
     )
 }
