@@ -1,13 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { AuthRoutes } from "./AuthRoutes"
 import { Auth } from "../pages/Auth"
-import { Employee } from "../pages/Employee"
 import { EmployeeRoutes } from "./EmployeeRoutes"
 
 
 const session = {
     user: {
-        role: ""
+        role: "employee"
     }
 }
 
