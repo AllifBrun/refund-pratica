@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { Input } from '../Components/Input'
 import { Button } from '../Components/Button'
 import { Select } from '../Components/Select'
+import { useNavigate, useParams } from "react-router";
 
 import { CATEGORIES_KEYS, CATEGORIES } from '../utils/categories'
+import { Upload } from '../Components/Upload'
 
 export function Refund() {
 
@@ -12,6 +14,10 @@ const [amount, setAmount] = useState("")
 const [category, setCategory] = useState("")
 const [filename, setFilename] = useState("")
 const [isLoading, setIsLoading] = useState(false)
+
+ const navigate = useNavigate()
+    const params = useParams<{ id: string }>()
+    console.log(params.id)
 
 function onSubmit(e: React.FormEvent){
   e.preventDefault()
@@ -32,6 +38,9 @@ function onSubmit(e: React.FormEvent){
 
     <Input legend='nome da solicitação' onChange={(e)=> setName(e.target.value)}/>
 
+
+    <div className='flex flex-1 gap-4'>
+
     <Select
      required
      legend='Categoria'
@@ -39,21 +48,42 @@ function onSubmit(e: React.FormEvent){
      onChange={(e)=> setCategory(e.target.value)}>
     {
       CATEGORIES_KEYS.map((category)=> (
-      <option className='bg-gray-500 text-gray-100 outline-none border rounded-lg'
-       key={category} 
-       value={category}>
+        <option className='bg-gray-500 text-gray-100 outline-none border rounded-lg'
+        key={category} 
+        value={category}>
         {CATEGORIES[category].name
         }
       </option>
       )
     )
-
-    }
+    
+  }
     </Select>
 
-    <div className='flex gap-4'>
+  <Input
+  legend='Valor'
+  placeholder='0,00' 
+  />
 
-    </div>
+  </div>
+
+    {
+                params.id ? <a href="https://www.rocketseat.com.br/" target="_blank"  className="text-sm text-green-100 font-semibold flex items-center justify-center gap-2 my-6 hover:opacity-70 transition ease-linear">
+
+                    <img src={fileSvg} alt="Ícone de arquivo" />
+                    Abrir comprovante
+                    </a> : (
+                    <Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])} disabled={!!params.id} />
+                )
+            }
+
+
+            <Button type='submit' isLoading={isLoading}>
+              {params.id ? "Voltar" : "Enviar"}
+            </Button>
+    
+
+    
     </form>
    </main>
 
